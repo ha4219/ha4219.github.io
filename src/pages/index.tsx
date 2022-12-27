@@ -1,13 +1,14 @@
-import * as React from 'react';
-import type { HeadFC, PageProps } from 'gatsby';
-import Layout from '../components/Layout';
+import React from "react";
+import type { HeadFC, PageProps } from "gatsby";
+import Header from "@/components/Header";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <Layout>
+    <>
+      <Header />
       <h1>Hello world!</h1>
       <div className="font-bold text-3xl">Hello world!</div>
-    </Layout>
+    </>
   );
 };
 
