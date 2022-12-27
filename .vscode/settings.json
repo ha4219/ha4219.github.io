@@ -1,7 +1,22 @@
 {
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
-  "eslint.alwaysShowStatus": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.tabSize": 2
+    // "typescript.enablePromptUseWorkspaceTsdk": true,
+    // "eslint.codeActionsOnSave.mode": "all",
+    // "eslint.run": "onType",
+    // "editor.codeActionsOnSave": {
+    //     "source.fixAll": true
+    // },
+    // "files.associations": {
+    //     "*.css": "tailwindcss"
+    // },
+    // "editor.quickSuggestions": {
+    //     "strings": true
+    // },
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+        "source.fixAll.format": true
+    }
 }

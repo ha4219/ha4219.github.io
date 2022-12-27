@@ -1,4 +1,5 @@
 {
+  "root": true,
   "env": {
     "browser": true,
     "es2021": true
@@ -21,7 +22,17 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "plugins": ["react", "@typescript-eslint", "prettier", "plugin:prettier/recommended"],
   "rules": {},
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "project": "./tsconfig.json"
+      }
+    }
+  },
   "ignorePatterns": ["public/", "node_modules/", "./gatsby-node.ts", "*.yml"]
 }
