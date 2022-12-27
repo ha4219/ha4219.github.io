@@ -11,7 +11,6 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   plugins: [
     'gatsby-plugin-postcss',
-    'gatsby-plugin-emotion',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
