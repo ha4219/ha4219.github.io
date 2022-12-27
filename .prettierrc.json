@@ -1,16 +1,15 @@
 {
-  "singleQuote": true,
+  "singleQuote": false,
   "semi": true,
   "useTabs": false,
   "tabWidth": 2,
   "trailingComma": "all",
-  "printWidth": 80,
-  "importOrder": [
-    "^@components/(.*)$",
-    "^@server/(.*)$",
-    "^@ui/(.*)$",
-    "^[./]"
-  ],
+  "printWidth": 100,
+  "arrowParens": "always",
+  "parser": "typescript",
+  "bracketSpacing": true,
+  "importOrder": ["^@components/(.*)$", "^[./]"],
   "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true
+  "importOrderSortSpecifiers": true,
+  "plugins": ["prettier-plugin-tailwindcss"]
 }
