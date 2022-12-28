@@ -13,13 +13,16 @@ describe("test Header", () => {
   it("logo check", () => {
     const { getByRole } = render(<Header />);
     const logo = getByRole("link", { name: /logo/i });
+
     expect(logo).toBeInTheDocument();
+    expect(logo).toHaveAttribute("href", "/");
   });
 
   it("portfolio check", () => {
     const { getByRole } = render(<Header />);
     const portfolio = getByRole("link", { name: /portfolio/i });
     expect(portfolio).toBeInTheDocument();
+    expect(portfolio).toHaveAttribute("href", "/portfolio");
   });
 
   it("projects check", () => {
@@ -27,6 +30,7 @@ describe("test Header", () => {
     const projects = getByRole("link", { name: /projects/i });
 
     expect(projects).toBeInTheDocument();
+    expect(projects).toHaveAttribute("href", "/projects");
   });
 
   it("posts check", () => {
@@ -34,6 +38,7 @@ describe("test Header", () => {
     const posts = getByRole("link", { name: /posts/i });
 
     expect(posts).toBeInTheDocument();
+    expect(posts).toHaveAttribute("href", "/posts");
   });
 
   it("drawer check", () => {

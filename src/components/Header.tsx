@@ -5,9 +5,9 @@ export default function Header() {
   return (
     <div data-testid="header">
       <Link to="/">logo</Link>
-      <a href="/portfolio">Portfolio</a>
-      <a href="/projects">Projects</a>
-      <a href="/posts">Posts</a>
+      <Link to="/portfolio">Portfolio</Link>
+      <Link to="/projects">Projects</Link>
+      <Link to="/posts">Posts</Link>
       <button>drawer</button>
     </div>
   );
