@@ -9,7 +9,7 @@ module.exports = {
   "**/*.(ts|tsx)": () => "tsc --noEmit",
 
   // Lint then format TypeScript and JavaScript files
-  "**/*.(ts|tsx)": [buildEslintCommand],
+  "**/*.test.(ts|tsx)": [buildEslintCommand],
 
   // Format MarkDown and JSON
   // "**/*.(md|json)": (filenames) => `yarn prettier --write ${filenames.join(" ")}`,
