@@ -1,8 +1,8 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { fireEvent, render } from "@testing-library/react";
 import Header from "../Header";
 
-describe("test Header", () => {
+describe("<Header/>", () => {
   // logo, portfolio, projects, posts, drawer?
   // it("contains 5 items", () => {
   //   const { getByTestId } = render(<Header />);
@@ -18,33 +18,47 @@ describe("test Header", () => {
     expect(logo).toHaveAttribute("href", "/");
   });
 
-  it("portfolio check", () => {
-    const { getByRole } = render(<Header />);
-    const portfolio = getByRole("link", { name: /about/i });
-    expect(portfolio).toBeInTheDocument();
-    expect(portfolio).toHaveAttribute("href", "/portfolio");
-  });
+  // it("about check", () => {
+  //   const { getByRole } = render(<Header />);
+  //   const about = getByRole("link", { name: /about/i });
 
-  it("projects check", () => {
-    const { getByRole } = render(<Header />);
-    const projects = getByRole("link", { name: /projects/i });
+  //   expect(about).toBeInTheDocument();
+  //   expect(about).toHaveAttribute("href", "/about");
+  // });
 
-    expect(projects).toBeInTheDocument();
-    expect(projects).toHaveAttribute("href", "/projects");
-  });
+  // it("projects check", () => {
+  //   const { getByRole } = render(<Header />);
+  //   const projects = getByRole("link", { name: /projects/i });
 
-  it("posts check", () => {
-    const { getByRole } = render(<Header />);
-    const posts = getByRole("link", { name: /posts/i });
+  //   expect(projects).toBeInTheDocument();
+  //   expect(projects).toHaveAttribute("href", "/projects");
+  // });
 
-    expect(posts).toBeInTheDocument();
-    expect(posts).toHaveAttribute("href", "/posts");
-  });
+  // it("posts check", () => {
+  //   const { getByRole } = render(<Header />);
+  //   const posts = getByRole("link", { name: /posts/i });
+
+  //   expect(posts).toBeInTheDocument();
+  //   expect(posts).toHaveAttribute("href", "/posts");
+  // });
 
   it("drawer check", () => {
     const { getByRole } = render(<Header />);
     const drawer = getByRole("button");
 
     expect(drawer).toBeInTheDocument();
+
+    fireEvent.click(drawer);
+    const posts = getByRole("link", { name: /posts/i });
+    expect(posts).toBeInTheDocument();
+    expect(posts).toHaveAttribute("href", "/posts");
+
+    const projects = getByRole("link", { name: /projects/i });
+    expect(projects).toBeInTheDocument();
+    expect(projects).toHaveAttribute("href", "/projects");
+
+    const about = getByRole("link", { name: /about/i });
+    expect(about).toBeInTheDocument();
+    expect(about).toHaveAttribute("href", "/about");
   });
 });
