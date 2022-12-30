@@ -1,15 +1,8 @@
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import Layout from "@/components/Layout";
 import React from "react";
 
 const AboutPage = () => {
-  return (
-    <>
-      <Header />
-      about
-      <Footer />
-    </>
-  );
+  return <Layout>about</Layout>;
 };
 
 export default AboutPage;

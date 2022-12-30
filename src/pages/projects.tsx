@@ -1,15 +1,8 @@
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import Layout from "@/components/Layout";
 import React from "react";
 
 const ProjectsPage = () => {
-  return (
-    <>
-      <Header />
-      project
-      <Footer />
-    </>
-  );
+  return <Layout>project</Layout>;
 };
 
 export default ProjectsPage;

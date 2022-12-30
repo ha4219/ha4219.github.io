@@ -10,12 +10,13 @@
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build",
+    "build": "gatsby build && cp CNAME ./public",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
     "prepare": "husky install",
-    "test": "yarn jest --watch"
+    "test": "yarn jest --watch",
+    "deploy": "yarn gh-pages -d public"
   },
   "dependencies": {
     "@mdx-js/react": "^2.2.1",

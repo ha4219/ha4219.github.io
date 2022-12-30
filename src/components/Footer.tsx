@@ -6,7 +6,7 @@ const Footer = () => {
       data-testid="footer"
       className="absolute bottom-0 w-full whitespace-nowrap bg-white p-4 px-2 dark:bg-gray-900 sm:p-6"
     >
-      <div className="container">
+      <div className="container mx-auto">
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
             {`© 2022 `}
