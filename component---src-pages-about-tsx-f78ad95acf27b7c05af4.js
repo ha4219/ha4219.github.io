@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkha4219_github_io=self.webpackChunkha4219_github_io||[]).push([[49],{2766:function(e,u,t){t.r(u);var a=t(2968),h=t(7294);u.default=()=>h.createElement(a.Z,null,"about")}}]);
+//# sourceMappingURL=component---src-pages-about-tsx-f78ad95acf27b7c05af4.js.map
