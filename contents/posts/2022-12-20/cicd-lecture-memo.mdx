@@ -1,0 +1,46 @@
+---
+layout: post
+title: "CICD 강의 메모"
+tags: devops
+category: devops
+date: 2022-12-20 00:00:00
+---
+
+# CI/CD
+
+- git-flow
+- docker
+    - Namespace
+        - pid
+        - network
+        - IPC
+        - Mount
+        - UNIX Time-sharing
+    - CGroup
+        - cpu
+        - memory
+        - block I/O
+        - network
+    - union file system
+    - `-it`
+        For interactive processes (like a shell), you must use `-i -t` together in order to allocate a tty for the container process. `-i -t` is often written `-it` as you’ll see in later examples. Specifying `-t` is forbidden when the client is receiving its standard input from a pipe, as in:
+        ```bash
+        echo test | docker run -i busybox cat
+        ```
+- docker file 작성
+    - CMD & ENTRYPOINT
+- linux
+    - `tail -f` : tail follow
+    - `history` → `!{number}`
+    - layered file system
+        - `from ubuntu18`
+    - history 남기지 않기
+        - `공백` command
+- python
+    - `fire`
+        - support CLI
+- Jenkins
+    - kubernetes
+        - argo cd
+    - RBAC
+        - roll based access control

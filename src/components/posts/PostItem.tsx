@@ -11,8 +11,8 @@ const PostItem: React.FC<Props> = ({ node }) => {
   return (
     <li className="border dark:text-white">
       <Link to={node.fields.slug}>
-        <div className="h-24 p-2">
-          <div className="float-left">
+        <div className="flex h-24 justify-between p-2">
+          <div className="inline-block">
             <div className="text-md my-1 truncate">{node.frontmatter.title}</div>
             <div className="my-1 text-xs text-gray-400 dark:text-white">{node.excerpt}</div>
             <div className="mt-1 text-xs">

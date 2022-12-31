@@ -59,7 +59,10 @@ const createCategoryPage = ({ createPage, results }) => {
       context: {
         currentCategory: category,
         categories,
-        edges: edges.filter(({ node }) => node.frontmatter.category.includes(category)),
+        edges:
+          category === "All"
+            ? edges
+            : edges.filter(({ node }) => node.frontmatter.category.includes(category)),
       },
     });
   });

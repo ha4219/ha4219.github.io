@@ -13,11 +13,18 @@ const CategoryTemplate: React.FC<Props> = ({ pageContext }) => {
 
   return (
     <Layout>
-      <p className="my-1 border px-2 text-7xl">{currentCategory}</p>
-      <div className="my-1 inline-block w-full break-words border px-2">
+      <h1 className="my-1 border px-2 py-2">{currentCategory}</h1>
+      <div className="my-1 flex flex-wrap break-words border p-2">
         {categories.map((item) => (
-          <span key={item} className="float-left truncate">
-            <Link to={`/posts/${item}`}>#{item}</Link>
+          <span key={item} className="inline-block pr-4">
+            <Link
+              to={`/posts/${item}`}
+              className="rounded-lg  p-2"
+              activeClassName="bg-red-500"
+              style={{ backgroundColor: "#f9f9f9" }}
+            >
+              {item}
+            </Link>
           </span>
         ))}
       </div>
