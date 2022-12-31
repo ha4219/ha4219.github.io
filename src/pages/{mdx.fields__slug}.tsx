@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import Node from "@/types/node";
-import { MDXContext, MDXProvider } from "@mdx-js/react";
+import { MDXProvider } from "@mdx-js/react";
 import { graphql } from "gatsby";
 import React from "react";
 
@@ -8,14 +8,14 @@ interface Props {
   data: {
     mdx: Node;
   };
+  children: React.ReactNode;
 }
 
-export const PostTemplate: React.FC<Props> = ({ data }) => {
+export const PostTemplate: React.FC<Props> = ({ data, children }) => {
   return (
     <Layout>
-      <MDXProvider>
-        <>{data.mdx.body}</>
-      </MDXProvider>
+      <div>123123</div>
+      <MDXProvider>{children}</MDXProvider>
     </Layout>
   );
 };
