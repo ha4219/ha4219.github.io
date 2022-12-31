@@ -46,7 +46,6 @@ impractical for real applications. Moreover, training deep
 
 - Featurized image pyramids는 hand-engineered features에서 많이 사용된다. DPM과 같은 object detectors가 좋은 결과를 내기 위해 dense scale sampling이 필요한 것은 치명적이다. 인식 과제에서, engineered된 feature들은 deep ConvNets으로 계산된 features으로 바뀌었다. 더 높은 semantics를 나타낼 뿐만 아니라, ConvNets scale 변화에 강력하다. 따라서 single input scale에서 계산된 features로 인식을 용이하게 한다. 강건하지만 pyramids는 여전히 가장 좋은 정확도 결과를 필요로 한다. 최근 유명 대회에 참가하는 모델들은 featurized image pyramids에 multi-scale testing을 사용한다. 각 level에 image pyramid를 featurizing의  주요 이점은 고해상도를 포함한 모든 level에서 semantically strong한 multi-scale feature 를 제공한다.
 
-  ![image-20220113095136558](C:\Users\ha421\AppData\Roaming\Typora\typora-user-images\image-20220113095136558.png)
 
 - 그럼에도 불구하고 명백한 한계가 존재한다. 시간이 상당히 증가하고 실제 app에서 비실용적일 것이라고 예측된다. 게다가 end-to-end networks에 올리는 것은 메모리적으로 실현 불가능하고 image pyramid는 오직 test time에 사용되기에 train과 test-time 추론 사이에 모순이 발생한다. 이러한 이유로 Fast, Faster R-CNN은 featurized image pyramids를 기본 세팅에 사용하지 않기로 선택했다. 
 
@@ -80,7 +79,6 @@ impractical for real applications. Moreover, training deep
 
     - Small Scale => 나무
 
-      ![image-20220118004214806](C:\Users\ha421\AppData\Roaming\Typora\typora-user-images\image-20220118004214806.png)
 
     - Large Scale => 숲
 
