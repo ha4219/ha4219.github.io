@@ -83,6 +83,7 @@ export const pageQuery = graphql`
         category
         author
         tags
+        thumbnail
       }
       fields {
         slug

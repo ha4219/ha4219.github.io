@@ -1,15 +1,26 @@
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [mode, setMode] = useState("light");
+
+  const toggle = () => {
+    console.log(mode);
+    setMode((prev) => (prev === "dark" ? "light" : "dark"));
+  };
+
+  useEffect(() => {
+    document.body.setAttribute("class", mode);
+  }, [mode]);
 
   return (
     <header
       data-testid="header"
       className="border-gray-200 bg-white px-2 dark:border-gray-700 dark:bg-gray-900"
     >
+      <button onClick={toggle}>{mode}</button>
       <div className="container mx-auto flex flex-wrap items-center justify-between">
         <Link to="/" className="flex items-center" data-testid="logo">
           <StaticImage src="../images/logoB.png" alt="logo-image" className="sm:h-15 mr-3 h-10" />
@@ -63,7 +74,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                to="/posts"
+                to="/posts/All"
                 activeClassName="bg-gray-100 dark:bg-gray-700 dark:text-white md:hover:bg-transparent md:hover:text-blue-700 md:dark:bg-transparent md:dark:text-white md:bg-transparent md:text-blue-700"
                 className="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
               >
