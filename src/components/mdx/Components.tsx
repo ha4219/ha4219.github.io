@@ -74,7 +74,7 @@ const Aside: React.FC<React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>,
 const Components: MDXComponents = {
   code: Code,
   Callout: Aside,
-  p: (props) => <p {...props} className="" />,
+  p: (props) => <p {...props} className="py-4" />,
   a: (props) => (
     <a {...props} className="text-blue-600 underline visited:text-purple-600 hover:text-blue-800" />
   ),
@@ -87,6 +87,7 @@ const Components: MDXComponents = {
   h4: (props) => <h4 {...props} className="py-4 font-bold" />,
   h5: (props) => <h5 {...props} className="py-4 font-bold" />,
   h6: (props) => <h6 {...props} className="py-4 font-bold" />,
+  img: (props) => <img {...props} className="py-4" />,
 };
 
 export default Components;
