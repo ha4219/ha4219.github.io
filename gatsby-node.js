@@ -84,7 +84,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               tags
               category
             }
-            excerpt(pruneLength: 50)
+            excerpt(pruneLength: 100)
             id
             body
             fields {

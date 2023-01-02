@@ -16,12 +16,11 @@ const CategoryTemplate: React.FC<Props> = ({ pageContext }) => {
       <h1 className="my-1 border px-2 py-2">{currentCategory}</h1>
       <div className="my-1 flex flex-wrap break-words border p-2">
         {categories.map((item) => (
-          <span key={item} className="inline-block pr-4">
+          <span key={item} className="my-1 mr-4 inline-block bg-gray-500">
             <Link
               to={`/posts/${item}`}
-              className="rounded-lg  p-2"
-              activeClassName="bg-red-500"
-              style={{ backgroundColor: "#f9f9f9" }}
+              className="rounded-lg p-2 text-lg hover:p-10"
+              activeClassName="blue-500"
             >
               {item}
             </Link>

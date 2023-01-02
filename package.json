@@ -16,7 +16,7 @@
     "typecheck": "tsc --noEmit",
     "prepare": "husky install",
     "test": "yarn jest --watch",
-    "deploy": "yarn gh-pages -d public"
+    "deploy": "yarn build && yarn gh-pages -d public"
   },
   "dependencies": {
     "@mdx-js/react": "^2.2.1",

@@ -11,19 +11,19 @@ const PostItem: React.FC<Props> = ({ node }) => {
   return (
     <li className="border dark:text-white">
       <Link to={node.fields.slug}>
-        <div className="flex h-24 justify-between p-2">
-          <div className="inline-block">
-            <div className="text-md my-1 truncate">{node.frontmatter.title}</div>
-            <div className="my-1 text-xs text-gray-400 dark:text-white">{node.excerpt}</div>
-            <div className="mt-1 text-xs">
+        <div className="flex h-24">
+          <div className="grid h-full w-full flex-col content-between p-2">
+            <p className="text-md mt-2 truncate">{node.frontmatter.title}</p>
+            <p className="text-xs text-gray-400 line-clamp-2 dark:text-white">{node.excerpt}</p>
+            <div className="mt-auto text-xs">
               <span className="mr-1 text-gray-400 dark:text-white">{node.frontmatter.moment}</span>
-              <span className="text-gray-400 dark:text-white">
+              {/* <span className="text-gray-400 dark:text-white">
                 read {Math.ceil(node.fields.timeToRead.minutes)} min
-              </span>
+              </span> */}
             </div>
           </div>
           {node.frontmatter.thumbnail && (
-            <div className="float-right ml-1">
+            <div className="ml-1">
               <img
                 src={node.frontmatter.thumbnail}
                 alt={node.frontmatter.title}

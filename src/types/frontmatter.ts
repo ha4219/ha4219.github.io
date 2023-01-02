@@ -5,6 +5,7 @@ interface Frontmatter {
   category: string[];
   tags?: string[];
   thumbnail?: string;
+  author: string;
 }
 
 export default Frontmatter;

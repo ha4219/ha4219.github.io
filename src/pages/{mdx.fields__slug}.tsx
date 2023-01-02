@@ -5,23 +5,31 @@ import { MDXProvider } from "@mdx-js/react";
 import { graphql } from "gatsby";
 import React, { useEffect, useState } from "react";
 
-interface Props {
-  data: {
-    mdx: Node;
-    site: {
-      siteMetadata: {
-        siteUrl: string;
-      };
+import type { PageProps } from "gatsby";
+import PostContentTitle from "@/components/posts/PostContentTitle";
+import Comments from "@/components/posts/Comments";
+
+type DataProps = {
+  // data: {
+  mdx: Node;
+  site: {
+    siteMetadata: {
+      siteUrl: string;
     };
   };
-  children: React.ReactNode;
-}
+};
 
-export const PostTemplate: React.FC<Props> = ({ data, children }) => {
+type PageContextType = { fields__slug: string };
+
+export const PostTemplate: React.FC<PageProps<DataProps, PageContextType>> = ({
+  data,
+  children,
+  pageContext,
+}) => {
   const [view, setView] = useState<number | null>(null);
 
   const { siteUrl } = data.site.siteMetadata;
-  const { slug } = data.mdx.fields;
+  const slug = pageContext.fields__slug;
 
   useEffect(() => {
     if (!siteUrl || !slug) return;
@@ -40,15 +48,32 @@ export const PostTemplate: React.FC<Props> = ({ data, children }) => {
 
   return (
     <Layout>
-      {view}
+      <PostContentTitle
+        title={data.mdx.frontmatter.title}
+        view={view}
+        author={data.mdx.frontmatter.author}
+        date={data.mdx.frontmatter.date}
+        minutes={data.mdx.fields.timeToRead.minutes}
+      />
       <MDXProvider components={Components}>{children}</MDXProvider>
+      <div className="flex flex-wrap break-words py-4">
+        {data.mdx.frontmatter.tags?.map((item) => (
+          <span
+            key={item}
+            className="my-1 mr-2 inline-block rounded-xl bg-gray-200 p-2 px-3 text-sm"
+          >
+            {item}
+          </span>
+        ))}
+      </div>
+      <Comments />
     </Layout>
   );
 };
 
 export const pageQuery = graphql`
-  query ($slug: String) {
-    mdx(fields: { slug: { eq: $slug } }) {
+  query ($fields__slug: String) {
+    mdx(fields: { slug: { eq: $fields__slug } }) {
       id
       body
       excerpt(pruneLength: 500)
@@ -56,9 +81,14 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         category
+        author
+        tags
       }
       fields {
         slug
+        timeToRead {
+          minutes
+        }
       }
     }
     site {
