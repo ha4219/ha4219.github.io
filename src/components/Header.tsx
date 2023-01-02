@@ -7,7 +7,6 @@ export default function Header() {
   const [mode, setMode] = useState("light");
 
   const toggle = () => {
-    console.log(mode);
     setMode((prev) => (prev === "dark" ? "light" : "dark"));
   };
 

@@ -2,8 +2,16 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `ha4219.github.io`,
+    title: `jeongdongha.me`,
     siteUrl: `https://jeongdongha.me`,
+    author: {
+      name: `jeongdongha`,
+      summary: `jeongdongha's dev blog`,
+    },
+    description: `jeongdongha's dev blog`,
+    social: {
+      twitter: `ha4219`,
+    },
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -23,6 +31,9 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
+        name: `jeongdongha.me`,
+        short_name: `jeongdongha.me`,
+        start_url: "/",
         icon: "src/images/logo.png",
       },
     },
@@ -63,6 +74,14 @@ const config: GatsbyConfig = {
       options: {
         name: "contents",
         path: "./contents",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://jeongdongha.me",
+        sitemap: "https://jeongdongha.me/sitemap-0.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
       },
     },
   ],
