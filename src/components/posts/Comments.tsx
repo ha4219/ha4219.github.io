@@ -8,6 +8,7 @@ const Comments = () => {
       script.setAttribute("src", "https://utteranc.es/client.js");
       script.setAttribute("repo", "ha4219/ha4219.github.io");
       script.setAttribute("async", "true");
+      script.setAttribute("label", "comments");
       script.setAttribute("issue-term", "pathname");
       script.setAttribute("theme", "github-light");
       divRef.current.appendChild(script);
