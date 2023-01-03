@@ -2,8 +2,16 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `ha4219.github.io`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `jeongdongha.me`,
+    siteUrl: `https://jeongdongha.me`,
+    author: {
+      name: `jeongdongha`,
+      summary: `jeongdongha's dev blog`,
+    },
+    description: `jeongdongha's dev blog`,
+    social: {
+      twitter: `ha4219`,
+    },
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -14,7 +22,7 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: "G-4XF51X6MBN",
+        trackingId: "G-ZZPHZRKY67",
       },
     },
     "gatsby-plugin-image",
@@ -23,10 +31,26 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/icon.png",
+        name: `jeongdongha.me`,
+        short_name: `jeongdongha.me`,
+        start_url: "/",
+        icon: "src/images/logo.png",
       },
     },
-    "gatsby-plugin-mdx",
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 720,
+            },
+          },
+          `gatsby-remark-katex`,
+        ],
+      },
+    },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
@@ -44,6 +68,21 @@ const config: GatsbyConfig = {
         path: "./src/pages/",
       },
       __key: "pages",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "contents",
+        path: "./contents",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://jeongdongha.me",
+        sitemap: "https://jeongdongha.me/sitemap-0.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
     },
   ],
 };

@@ -1,14 +1,47 @@
 import React from "react";
 import type { HeadFC, PageProps } from "gatsby";
-import Header from "@/components/Header";
+import Layout from "@/components/Layout";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <>
-      <Header />
+    <Layout>
       <h1>Hello world!</h1>
-      <div className="font-bold text-3xl">Hello world!</div>
-    </>
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+      <div className="text-3xl font-bold">Hello world!</div>
+    </Layout>
   );
 };
 
