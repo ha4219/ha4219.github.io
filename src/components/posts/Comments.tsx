@@ -6,7 +6,7 @@ const Comments = () => {
     if (divRef.current?.children.length === 0) {
       const script = document.createElement("script");
       script.setAttribute("src", "https://utteranc.es/client.js");
-      script.setAttribute("repo", "ha4219/ha4219.github.io");
+      script.setAttribute("repo", "ha4219/managing-blog-comments");
       script.setAttribute("async", "true");
       script.setAttribute("label", "comments");
       script.setAttribute("issue-term", "pathname");
