@@ -88,6 +88,7 @@ const Components: MDXComponents = {
   h5: (props) => <h5 {...props} className="py-4 font-bold" />,
   h6: (props) => <h6 {...props} className="py-4 font-bold" />,
   img: (props) => <img {...props} className="py-4" />,
+  hr: (props) => <hr {...props} className="py-4" />,
 };
 
 export default Components;
