@@ -80,7 +80,7 @@ const config: GatsbyConfig = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://jeongdongha.me",
-        sitemap: "https://jeongdongha.me/sitemap-0.xml",
+        sitemap: "https://jeongdongha.me/sitemap.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
