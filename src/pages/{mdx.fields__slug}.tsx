@@ -48,25 +48,27 @@ export const PostTemplate: React.FC<PageProps<DataProps, PageContextType>> = ({
 
   return (
     <Layout>
-      <PostContentTitle
-        title={data.mdx.frontmatter.title}
-        view={view}
-        author={data.mdx.frontmatter.author}
-        date={data.mdx.frontmatter.date}
-        minutes={data.mdx.fields.timeToRead.minutes}
-      />
-      <MDXProvider components={Components}>{children}</MDXProvider>
-      <div className="flex flex-wrap break-words py-4">
-        {data.mdx.frontmatter.tags?.map((item) => (
-          <span
-            key={item}
-            className="my-1 mr-2 inline-block rounded-xl bg-gray-200 p-2 px-3 text-sm"
-          >
-            {item}
-          </span>
-        ))}
+      <div className="mx-auto max-w-3xl">
+        <PostContentTitle
+          title={data.mdx.frontmatter.title}
+          view={view}
+          author={data.mdx.frontmatter.author}
+          date={data.mdx.frontmatter.date}
+          minutes={data.mdx.fields.timeToRead.minutes}
+        />
+        <MDXProvider components={Components}>{children}</MDXProvider>
+        <div className="flex flex-wrap break-words py-4">
+          {data.mdx.frontmatter.tags?.map((item) => (
+            <span
+              key={item}
+              className="my-1 mr-2 inline-block rounded-xl bg-gray-200 p-2 px-3 text-sm"
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+        <Comments />
       </div>
-      <Comments />
     </Layout>
   );
 };

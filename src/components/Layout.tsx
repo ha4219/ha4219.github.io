@@ -4,7 +4,10 @@ import Header from "./Header";
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <div style={{ position: "relative", minHeight: "100vh", paddingBottom: "6rem" }}>
+    <div
+      style={{ position: "relative", minHeight: "100vh", paddingBottom: "6rem" }}
+      className="mx-auto max-w-3xl"
+    >
       <Header />
       <div className="container mx-auto pt-10">{children}</div>
       <Footer />

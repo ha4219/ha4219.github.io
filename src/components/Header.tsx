@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <header
       data-testid="header"
-      className="border-gray-200 bg-white px-2 dark:border-gray-700 dark:bg-gray-900"
+      className="border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900"
     >
       <button onClick={toggle}>{mode}</button>
       <div className="container mx-auto flex flex-wrap items-center justify-between">

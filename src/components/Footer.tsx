@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer
       data-testid="footer"
-      className="absolute bottom-0 w-full whitespace-nowrap bg-white p-4 px-2 dark:bg-gray-900 sm:p-6"
+      className="absolute bottom-0 w-full whitespace-nowrap bg-white py-4 dark:bg-gray-900 sm:py-6"
     >
       <div className="container mx-auto">
         <div className="sm:flex sm:items-center sm:justify-between">
