@@ -47,7 +47,7 @@ export const PostTemplate: React.FC<PageProps<DataProps, PageContextType>> = ({
   }, [siteUrl, slug]);
 
   return (
-    <Layout>
+    <Layout title={data.mdx.frontmatter.title}>
       <div className="mx-auto max-w-3xl">
         <PostContentTitle
           title={data.mdx.frontmatter.title}

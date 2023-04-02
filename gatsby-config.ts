@@ -26,6 +26,7 @@ const config: GatsbyConfig = {
       },
     },
     "gatsby-plugin-image",
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-tsconfig-paths`,
     "gatsby-plugin-sitemap",
     {
