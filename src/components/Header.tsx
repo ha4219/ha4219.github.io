@@ -4,22 +4,12 @@ import React, { useEffect, useMemo, useState } from "react";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const [mode, setMode] = useState("light");
-
-  const toggle = () => {
-    setMode((prev) => (prev === "dark" ? "light" : "dark"));
-  };
-
-  useEffect(() => {
-    document.body.setAttribute("class", mode);
-  }, [mode]);
 
   return (
     <header
       data-testid="header"
       className="border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900"
     >
-      <button onClick={toggle}>{mode}</button>
       <div className="container mx-auto flex flex-wrap items-center justify-between">
         <Link to="/" className="flex items-center" data-testid="logo">
           <StaticImage src="../images/logoB.png" alt="logo-image" className="sm:h-15 mr-3 h-10" />
