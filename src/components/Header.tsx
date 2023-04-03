@@ -2,7 +2,7 @@ import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import React, { useEffect, useMemo, useState } from "react";
 
-export default function Header() {
+function Header() {
   const [open, setOpen] = useState(false);
 
   return (
@@ -76,3 +76,5 @@ export default function Header() {
     </header>
   );
 }
+
+export default React.memo(Header);
