@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkha4219_github_io=self.webpackChunkha4219_github_io||[]).push([[49],{2766:function(e,t,l){l.r(t);var n=l(9332),a=l(7294);t.default=()=>a.createElement(n.Z,null,a.createElement("div",null,a.createElement("span",null,"hello i'm jeongdongha")),a.createElement("div",null,a.createElement("span",null,"github: "),a.createElement("a",{href:"https://github.com/ha4219"},"@ha4219")))}}]);
+//# sourceMappingURL=component---src-pages-about-tsx-87f2e2fa08963b9a43a8.js.map
