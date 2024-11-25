@@ -28,7 +28,17 @@ const config: GatsbyConfig = {
     "gatsby-plugin-image",
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-tsconfig-paths`,
-    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        resolvePages: ({ site, allSitePage }: { site: any; allSitePage: any }) => {
+          const DEFAULT = ["/trait-tracker"];
+          const defaults = DEFAULT.map((path) => ({ path }));
+
+          return [...defaults, ...allSitePage.nodes];
+        },
+      },
+    },
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -81,7 +91,7 @@ const config: GatsbyConfig = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://jeongdongha.me",
-        sitemap: "https://jeongdongha.me/sitemap.xml",
+        sitemap: "https://jeongdongha.me/sitemap-index.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
