@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://jeongdongha.me/sitemap.xml
+Sitemap: https://jeongdongha.me/sitemap-index.xml
 Host: https://jeongdongha.me
